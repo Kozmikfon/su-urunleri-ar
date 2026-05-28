@@ -1,0 +1,210 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Nunito', Arial, sans-serif;
+  background: black;
+}
+
+/* ── START SCREEN ── */
+#startScreen {
+  position: fixed;
+  z-index: 999999;
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg, #001d3d, #003566, #0077b6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-card {
+  width: 90%; max-width: 400px;
+  background: white;
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.logo { font-size: 56px; margin-bottom: 8px; }
+
+.start-card h1 {
+  margin: 0 0 10px;
+  color: #001d3d;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.start-card p { color: #555; margin-bottom: 24px; line-height: 1.6; }
+
+/* ── BUTTONS ── */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0077b6, #001d3d);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+button:active { transform: scale(0.97); }
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* ── OVERLAY (popup arka planı) ── */
+#fishPopup, #quizPopup, #resultPopup, #aiPopup {
+  position: fixed;
+  z-index: 999999;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.65);
+}
+
+/* ── POPUP CARD ── */
+.popup-card {
+  width: 92%; max-width: 380px;
+  background: white;
+  border-radius: 24px;
+  padding: 22px;
+  text-align: center;
+  animation: popupAnim 0.35s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.popup-card img { width: 100%; border-radius: 16px; object-fit: cover; max-height: 180px; }
+.popup-card h2 { margin: 14px 0 6px; color: #001d3d; font-weight: 900; }
+.popup-card p  { color: #555; line-height: 1.5; margin: 0 0 14px; font-size: 14px; }
+
+/* ── BİLGİ KUTULARI ── */
+.info-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.info-box {
+  background: #f0f7ff;
+  border-radius: 12px;
+  padding: 10px 8px;
+  display: flex; flex-direction: column;
+}
+.info-label { font-size: 11px; color: #0077b6; font-weight: 700; margin-bottom: 4px; }
+.info-val   { font-size: 13px; color: #001d3d; font-weight: 700; }
+
+/* ── QUIZ ── */
+.quiz-header {
+  display: flex; justify-content: space-between;
+  margin-bottom: 14px;
+  font-weight: 700; color: #0077b6;
+  font-size: 14px;
+}
+
+.quiz-card h3 {
+  font-size: 16px; color: #001d3d;
+  margin-bottom: 16px; line-height: 1.5;
+}
+
+.quiz-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+
+.quiz-opt {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%; margin-top: 0;
+}
+.quiz-opt:hover { border-color: #0077b6; background: #f0f7ff; }
+.quiz-opt.correct { background: #d4edda; border-color: #28a745; color: #155724; }
+.quiz-opt.wrong   { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+.quiz-opt:disabled { cursor: default; }
+
+.quiz-feedback {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.quiz-feedback.correct-fb { background: #d4edda; color: #155724; }
+.quiz-feedback.wrong-fb   { background: #f8d7da; color: #721c24; }
+
+/* ── SONUÇ ── */
+.result-emoji { font-size: 64px; margin-bottom: 8px; }
+.score-circle {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0077b6, #001d3d);
+  color: white; font-size: 22px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  margin: 16px auto;
+}
+
+/* ── AI TANIMA ── */
+.upload-area {
+  border: 2px dashed #0077b6;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 14px 0;
+  background: #f0f7ff;
+  cursor: pointer;
+}
+.upload-area input[type="file"] { display: none; }
+.upload-area label { cursor: pointer; font-weight: 700; color: #0077b6; font-size: 15px; }
+
+#aiPreview {
+  width: 100%; border-radius: 14px;
+  object-fit: cover; max-height: 160px;
+  margin-bottom: 10px;
+}
+
+.ai-result {
+  background: #f0f7ff;
+  border-radius: 14px;
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+  color: #001d3d;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+}
+
+.ai-loading { color: #0077b6; font-weight: 700; text-align: center; padding: 10px; }
+
+/* ── AI FLOAT BUTTON ── */
+.ai-float-btn {
+  position: fixed !important;
+  bottom: 24px; right: 20px;
+  width: auto !important;
+  padding: 12px 20px !important;
+  border-radius: 50px !important;
+  font-size: 14px !important;
+  z-index: 9999;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+}
+
+/* ── HIDDEN / ANİMASYON ── */
+.hidden { display: none !important; }
+
+@keyframes popupAnim {
+  from { transform: scale(0.75); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
