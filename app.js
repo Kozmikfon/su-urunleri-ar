@@ -266,6 +266,12 @@ const aiCanvas  = document.getElementById("aiCanvas");
 const aiCapture = document.getElementById("aiCaptureBtn");
 
 aiFloatBtn.addEventListener("click", async () => {
+  // AR sahnesini duraklat
+  const sceneEl = document.querySelector("a-scene");
+  if (sceneEl && sceneEl.systems["mindar-image-system"]) {
+    sceneEl.systems["mindar-image-system"].pause();
+  }
+
   aiPopup.classList.remove("hidden");
   aiResult.classList.add("hidden");
   aiResult.textContent = "";
@@ -288,6 +294,12 @@ aiClose.addEventListener("click", () => {
   aiAnalyzeBtn.classList.add("hidden");
   aiResult.classList.add("hidden");
   aiVideo.srcObject = null;
+
+  // AR sahnesini tekrar başlat
+  const sceneEl = document.querySelector("a-scene");
+  if (sceneEl && sceneEl.systems["mindar-image-system"]) {
+    sceneEl.systems["mindar-image-system"].unpause();
+  }
 });
 
 aiCapture.addEventListener("click", () => {
