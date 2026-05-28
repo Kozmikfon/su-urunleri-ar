@@ -87,20 +87,20 @@
   </div>
 
   <!-- AI TANIMA POPUP -->
-  <div id="aiPopup" class="hidden">
-    <div class="popup-card ai-card">
-      <h2>🤖 AI Balık Tanıma</h2>
-      <p>Bir balık fotoğrafı yükle, AI tanısın!</p>
-      <div class="upload-area" id="uploadArea">
-        <input type="file" id="aiImageInput" accept="image/*" />
-        <label for="aiImageInput">📸 Fotoğraf Seç</label>
-      </div>
-      <img id="aiPreview" class="hidden" alt="preview" />
-      <div id="aiResult" class="ai-result hidden"></div>
-      <button id="aiAnalyzeBtn" class="hidden">Analiz Et 🔍</button>
-      <button id="aiClose" class="btn-secondary">Kapat</button>
-    </div>
+<!-- AI TANIMA POPUP -->
+<div id="aiPopup" class="hidden">
+  <div class="popup-card ai-card">
+    <h2>🤖 AI Balık Tanıma</h2>
+    <p>Kamerayı balığa tut, fotoğraf çek!</p>
+    <video id="aiVideo" autoplay playsinline></video>
+    <canvas id="aiCanvas" class="hidden"></canvas>
+    <img id="aiPreview" class="hidden" alt="preview" />
+    <div id="aiResult" class="ai-result hidden"></div>
+    <button id="aiCaptureBtn">📸 Fotoğraf Çek</button>
+    <button id="aiAnalyzeBtn" class="hidden">Analiz Et 🔍</button>
+    <button id="aiClose" class="btn-secondary">Kapat</button>
   </div>
+</div>
 
   <!-- AI BUTONU (sabit) -->
   <button id="aiFloatBtn" class="hidden ai-float-btn">🤖 AI Tanı</button>

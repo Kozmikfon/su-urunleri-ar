@@ -260,57 +260,63 @@ window.addEventListener("load", () => {
 });
 
 /* ── AI BALIK TANIMA ── */
-aiFloatBtn.addEventListener("click", () => {
+let aiStream = null;
+const aiVideo   = document.getElementById("aiVideo");
+const aiCanvas  = document.getElementById("aiCanvas");
+const aiCapture = document.getElementById("aiCaptureBtn");
+
+aiFloatBtn.addEventListener("click", async () => {
   aiPopup.classList.remove("hidden");
   aiResult.classList.add("hidden");
   aiResult.textContent = "";
   aiAnalyzeBtn.classList.add("hidden");
   aiPreview.classList.add("hidden");
-  aiImageInput.value = "";
+
+  try {
+    aiStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+    aiVideo.srcObject = aiStream;
+  } catch (err) {
+    aiResult.textContent = "❌ Kamera açılamadı: " + err.message;
+    aiResult.classList.remove("hidden");
+  }
 });
 
 aiClose.addEventListener("click", () => {
   aiPopup.classList.add("hidden");
+  if (aiStream) { aiStream.getTracks().forEach(t => t.stop()); aiStream = null; }
+  aiPreview.classList.add("hidden");
+  aiAnalyzeBtn.classList.add("hidden");
+  aiResult.classList.add("hidden");
+  aiVideo.srcObject = null;
 });
 
-aiImageInput.addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = (ev) => {
-    aiPreview.src = ev.target.result;
-    aiPreview.classList.remove("hidden");
-    aiAnalyzeBtn.classList.remove("hidden");
-    aiResult.classList.add("hidden");
-  };
-  reader.readAsDataURL(file);
+aiCapture.addEventListener("click", () => {
+  aiCanvas.width  = aiVideo.videoWidth;
+  aiCanvas.height = aiVideo.videoHeight;
+  aiCanvas.getContext("2d").drawImage(aiVideo, 0, 0);
+  const dataUrl = aiCanvas.toDataURL("image/jpeg");
+  aiPreview.src = dataUrl;
+  aiPreview.classList.remove("hidden");
+  aiAnalyzeBtn.classList.remove("hidden");
+  aiResult.classList.add("hidden");
 });
 
 aiAnalyzeBtn.addEventListener("click", async () => {
-  const file = aiImageInput.files[0];
-  if (!file) return;
-
   aiResult.className = "ai-result ai-loading";
   aiResult.textContent = "🔍 AI analiz ediyor...";
   aiResult.classList.remove("hidden");
   aiAnalyzeBtn.disabled = true;
 
   try {
-    const base64 = await fileToBase64(file);
-    const mediaType = file.type;
-
-   const response = await fetch("/api/analyze", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ base64, mediaType })
-});
-const data = await response.json();
-const text = data.result || "Sonuç alınamadı.";
-
-
-
-    aiResult.textContent = text;
-
+    const base64 = aiPreview.src.split(",")[1];
+    const response = await fetch("/api/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ base64, mediaType: "image/jpeg" })
+    });
+    const data = await response.json();
+    aiResult.className = "ai-result";
+    aiResult.textContent = data.result || "Sonuç alınamadı.";
   } catch (err) {
     aiResult.className = "ai-result";
     aiResult.textContent = "❌ Hata oluştu: " + err.message;
@@ -318,12 +324,3 @@ const text = data.result || "Sonuç alınamadı.";
 
   aiAnalyzeBtn.disabled = false;
 });
-
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result.split(",")[1]);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
