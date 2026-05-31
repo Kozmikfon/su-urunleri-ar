@@ -271,7 +271,9 @@ aiFloatBtn.addEventListener("click", async () => {
   if (sceneEl && sceneEl.systems["mindar-image-system"]) {
     sceneEl.systems["mindar-image-system"].pause();
   }
-
+// AR video elementini gizle
+  const arVideo = document.querySelector("video.videoTexture");
+  if (arVideo) arVideo.style.display = "none";
   aiPopup.classList.remove("hidden");
   aiResult.classList.add("hidden");
   aiResult.textContent = "";
@@ -300,8 +302,10 @@ aiClose.addEventListener("click", () => {
   if (sceneEl && sceneEl.systems["mindar-image-system"]) {
     sceneEl.systems["mindar-image-system"].unpause();
   }
+  // AR video elementini tekrar göster
+  const arVideo = document.querySelector("video.videoTexture");
+  if (arVideo) arVideo.style.display = "";
 });
-
 aiCapture.addEventListener("click", () => {
   aiCanvas.width  = aiVideo.videoWidth;
   aiCanvas.height = aiVideo.videoHeight;
