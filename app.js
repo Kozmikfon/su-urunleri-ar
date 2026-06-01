@@ -560,5 +560,19 @@ showModelBtn.addEventListener("click", () => {
 });
 
 closeModelBtn.addEventListener("click", () => {
+
   modelPopup.classList.add("hidden");
+  resultPopup.classList.add("hidden");
+
+  currentTarget = null;
+
+  const sceneEl = document.querySelector("a-scene");
+
+  if (
+    sceneEl &&
+    sceneEl.systems &&
+    sceneEl.systems["mindar-image-system"]
+  ) {
+    sceneEl.systems["mindar-image-system"].unpause();
+  }
 });
