@@ -48,7 +48,7 @@ const fishData = {
     size: "30–70 cm",
     diet: "Etçil (balık, karides)",
     status: "Yaygın",
-    image: "./assets/images/levrek.jpg",
+    image: "./assets/images/0-levrek.jpg",
     questions: [
       {
         q: "Levrek hangi denizde yaşar?",
@@ -74,7 +74,7 @@ const fishData = {
     size: "8–15 cm",
     diet: "Zooplankton, algler",
     status: "Yaygın",
-    image: "./assets/images/palyaco.jpg",
+    image: "./assets/images/1-palyaco.jpg",
     questions: [
       {
         q: "Palyaço balığı hangi canlıyla birlikte yaşar?",
@@ -100,7 +100,7 @@ const fishData = {
     size: "50–120 cm",
     diet: "Küçük balık, karides",
     status: "Kültür balıkçılığı",
-    image: "./assets/images/somon.jpg",
+    image: "./assets/images/2-somon.jpg",
     questions: [
       {
         q: "Somon balığı nerede doğar?",
@@ -116,6 +116,201 @@ const fishData = {
         q: "Somonun bilimsel adı nedir?",
         options: ["Salmo salar", "Dicentrarchus labrax", "Trachurus trachurus", "Sparus aurata"],
         correct: 0
+      }
+    ]
+  },
+    3: {
+    name: "Sazan Balığı",
+    desc: "Sazan balığı tatlı sularda yaşayan dayanıklı ve yaygın bir balık türüdür.",
+    habitat: "Göl ve Nehirler",
+    size: "30–100 cm",
+    diet: "Omnivor",
+    status: "Yaygın",
+    image: "./assets/images/3-sazan.jpg",
+
+    questions: [
+      {
+        q: "Sazan balığı hangi sularda yaşar?",
+        options: ["Tatlı su", "Okyanus", "Tuz gölü", "Mercan resifi"],
+        correct: 0
+      },
+      {
+        q: "Sazan nasıl beslenir?",
+        options: ["Etçil", "Otçul", "Omnivor", "Sadece plankton"],
+        correct: 2
+      },
+      {
+        q: "Sazan balığı genelde nerede bulunur?",
+        options: ["Çölde", "Nehir ve göllerde", "Buzullarda", "Mağarada"],
+        correct: 1
+      }
+    ]
+  },
+
+  4: {
+    name: "Köpek Balığı",
+    desc: "Köpek balıkları okyanusların en güçlü avcılarından biridir.",
+    habitat: "Okyanuslar",
+    size: "2–12 metre",
+    diet: "Etçil",
+    status: "Bazı türler tehlikede",
+    image: "./assets/images/4-kopekbaligi.jpg",
+
+    questions: [
+      {
+        q: "Köpek balığı nasıl beslenir?",
+        options: ["Otçul", "Etçil", "Plankton", "Alg"],
+        correct: 1
+      },
+      {
+        q: "Köpek balıkları nerede yaşar?",
+        options: ["Çöller", "Ormanlar", "Okyanuslar", "Nehirler"],
+        correct: 2
+      },
+      {
+        q: "Köpek balığı hangi özelliğiyle bilinir?",
+        options: ["Uçması", "Güçlü avcı olması", "Karada yaşaması", "Işık saçması"],
+        correct: 1
+      }
+    ]
+  },
+
+  5: {
+    name: "Ton Balığı",
+    desc: "Ton balığı hızlı yüzmesiyle bilinen büyük bir okyanus balığıdır.",
+    habitat: "Atlantik ve Pasifik",
+    size: "100–250 cm",
+    diet: "Etçil",
+    status: "Ticari avcılık",
+    image: "./assets/images/5-ton.jpg",
+
+    questions: [
+      {
+        q: "Ton balığı nasıl bir balıktır?",
+        options: ["Yavaş", "Uçamayan", "Hızlı yüzen", "Tatlı su"],
+        correct: 2
+      },
+      {
+        q: "Ton balığı nerede yaşar?",
+        options: ["Okyanus", "Çöl", "Nehir", "Bataklık"],
+        correct: 0
+      },
+      {
+        q: "Ton balığı neyle beslenir?",
+        options: ["Etçil", "Otçul", "Meyve", "Alg"],
+        correct: 0
+      }
+    ]
+  },
+
+  6: {
+    name: "Yunus Balığı",
+    desc: "Yunus balığı hızlı hareket eden tropikal bir deniz canlısıdır.",
+    habitat: "Tropikal Denizler",
+    size: "50–200 cm",
+    diet: "Etçil",
+    status: "Yaygın",
+    image: "./assets/images/6-yunus.jpg",
+
+    questions: [
+      {
+        q: "Yunus balığı hangi sularda yaşar?",
+        options: ["Tatlı su", "Tropikal denizler", "Buzullar", "Mağaralar"],
+        correct: 1
+      },
+      {
+        q: "Yunus balığı nasıl beslenir?",
+        options: ["Otçul", "Etçil", "Alg", "Plankton"],
+        correct: 1
+      },
+      {
+        q: "Yunus balığı hangi özelliğiyle bilinir?",
+        options: ["Hızlı yüzmesi", "Karada yaşaması", "Uçması", "Işık saçması"],
+        correct: 0
+      }
+    ]
+  },
+
+  7: {
+    name: "Hamsi",
+    desc: "Hamsi Karadeniz'de yaygın bulunan küçük bir balık türüdür.",
+    habitat: "Karadeniz",
+    size: "10–18 cm",
+    diet: "Plankton",
+    status: "Yaygın",
+    image: "./assets/images/7-hamsi.jpg",
+
+    questions: [
+      {
+        q: "Hamsi en çok hangi bölgede bulunur?",
+        options: ["Karadeniz", "Çöl", "Pasifik", "Atlantik"],
+        correct: 0
+      },
+      {
+        q: "Hamsi neyle beslenir?",
+        options: ["Et", "Plankton", "Alg", "Meyve"],
+        correct: 1
+      },
+      {
+        q: "Hamsi nasıl bir balıktır?",
+        options: ["Dev", "Küçük", "Uçan", "Tatlı su"],
+        correct: 1
+      }
+    ]
+  },
+
+  8: {
+    name: "Orkinos",
+    desc: "Orkinos büyük ve güçlü bir açık deniz balığıdır.",
+    habitat: "Açık Denizler",
+    size: "150–300 cm",
+    diet: "Etçil",
+    status: "Av baskısı altında",
+    image: "./assets/images/8-orkinos.jpg",
+
+    questions: [
+      {
+        q: "Orkinos nasıl beslenir?",
+        options: ["Otçul", "Etçil", "Alg", "Plankton"],
+        correct: 1
+      },
+      {
+        q: "Orkinos nerede yaşar?",
+        options: ["Açık deniz", "Çöl", "Nehir", "Orman"],
+        correct: 0
+      },
+      {
+        q: "Orkinos nasıl bir balıktır?",
+        options: ["Küçük", "Güçlü", "Uçan", "Karasal"],
+        correct: 1
+      }
+    ]
+  },
+
+  9: {
+    name: "Japon Balığı",
+    desc: "Japon balığı akvaryumlarda en çok beslenen süs balıklarından biridir.",
+    habitat: "Tatlı Su",
+    size: "15–30 cm",
+    diet: "Omnivor",
+    status: "Evcil",
+    image: "./assets/images/9-japon.jpg",
+
+    questions: [
+      {
+        q: "Japon balığı genellikle nerede yaşar?",
+        options: ["Akvaryum", "Çöl", "Okyanus", "Buzul"],
+        correct: 0
+      },
+      {
+        q: "Japon balığı nasıl beslenir?",
+        options: ["Etçil", "Omnivor", "Sadece et", "Sadece alg"],
+        correct: 1
+      },
+      {
+        q: "Japon balığı hangi amaçla beslenir?",
+        options: ["Yarış", "Süs", "Avcılık", "Taşıma"],
+        correct: 1
       }
     ]
   }
