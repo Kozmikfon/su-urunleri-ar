@@ -27,6 +27,10 @@ const resultTitle = document.getElementById("resultTitle");
 const resultDesc  = document.getElementById("resultDesc");
 const resultScore = document.getElementById("resultScore");
 const resultClose = document.getElementById("resultClose");
+const showModelBtn = document.getElementById("showModelBtn");
+const modelPopup = document.getElementById("modelPopup");
+const closeModelBtn = document.getElementById("closeModelBtn");
+const fishModelViewer = document.getElementById("fishModelViewer");
 
 const aiPopup     = document.getElementById("aiPopup");
 const aiFloatBtn  = document.getElementById("aiFloatBtn");
@@ -49,6 +53,7 @@ const fishData = {
     diet: "Etçil (balık, karides)",
     status: "Yaygın",
     image: "./assets/images/0-levrek.jpg",
+    
     questions: [
       {
         q: "Levrek hangi denizde yaşar?",
@@ -75,6 +80,7 @@ const fishData = {
     diet: "Zooplankton, algler",
     status: "Yaygın",
     image: "./assets/images/1-palyaco.jpg",
+    model: "./assets/models/palyaco.glb",
     questions: [
       {
         q: "Palyaço balığı hangi canlıyla birlikte yaşar?",
@@ -127,6 +133,7 @@ const fishData = {
     diet: "Omnivor",
     status: "Yaygın",
     image: "./assets/images/3-sazan.jpg",
+    model: "./assets/models/sazan.glb",
 
     questions: [
       {
@@ -155,6 +162,7 @@ const fishData = {
     diet: "Etçil",
     status: "Bazı türler tehlikede",
     image: "./assets/images/4-kopekbaligi.jpg",
+    model: "./assets/models/kopekbaligi.glb",
 
     questions: [
       {
@@ -295,6 +303,7 @@ const fishData = {
     diet: "Omnivor",
     status: "Evcil",
     image: "./assets/images/9-japon.jpg",
+    model: "./assets/models/japon.glb",
 
     questions: [
       {
@@ -534,4 +543,22 @@ aiAnalyzeBtn.addEventListener("click", async () => {
   }
 
   aiAnalyzeBtn.disabled = false;
+});
+showModelBtn.addEventListener("click", () => {
+
+  const fish = quizState.currentFish;
+
+  if (!fish || !fish.model) {
+    alert("Bu balık için 3D model bulunamadı.");
+    return;
+  }
+
+  fishModelViewer.src = fish.model;
+
+  resultPopup.classList.add("hidden");
+  modelPopup.classList.remove("hidden");
+});
+
+closeModelBtn.addEventListener("click", () => {
+  modelPopup.classList.add("hidden");
 });

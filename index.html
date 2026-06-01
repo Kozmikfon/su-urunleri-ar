@@ -13,7 +13,7 @@
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <!-- MINDAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -74,17 +74,39 @@
   </div>
 
   <!-- SONUÇ POPUP -->
-  <div id="resultPopup" class="hidden">
-    <div class="popup-card result-card">
-      <div id="resultEmoji" class="result-emoji"></div>
-      <h2 id="resultTitle"></h2>
-      <p id="resultDesc"></p>
-      <div class="score-circle">
-        <span id="resultScore"></span>
-      </div>
-      <button id="resultClose">Tekrar Tarat 🎯</button>
+ <div id="resultPopup" class="hidden">
+  <div class="popup-card result-card">
+    <div id="resultEmoji" class="result-emoji"></div>
+    <h2 id="resultTitle"></h2>
+    <p id="resultDesc"></p>
+
+    <div class="score-circle">
+      <span id="resultScore"></span>
     </div>
+
+    <button id="showModelBtn">3D Modeli Gör 🐟</button>
+    <button id="resultClose">Tekrar Tarat 🎯</button>
   </div>
+</div>
+
+<div id="modelPopup" class="hidden">
+  <div class="popup-card">
+
+    <h2 id="modelTitle">3D Balık Modeli</h2>
+
+    <model-viewer
+      id="fishModelViewer"
+      src=""
+      camera-controls
+      auto-rotate
+      shadow-intensity="1"
+      style="width:100%;height:400px;">
+    </model-viewer>
+
+    <button id="closeModelBtn">Kapat</button>
+
+  </div>
+</div>
 
   <!-- AI TANIMA POPUP -->
 <!-- AI TANIMA POPUP -->
