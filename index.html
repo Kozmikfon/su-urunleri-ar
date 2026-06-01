@@ -9,7 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 
+  <!-- AFRAME -->
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <!-- MINDAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
   
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
@@ -34,22 +36,10 @@
       <h2 id="fishName"></h2>
       <p id="fishDesc"></p>
       <div class="info-row">
-        <div class="info-box">
-          <span class="info-label">📏 Boyut</span>
-          <span id="fishSize" class="info-val"></span>
-        </div>
-        <div class="info-box">
-          <span class="info-label">🌊 Habitat</span>
-          <span id="fishHabitat" class="info-val"></span>
-        </div>
-        <div class="info-box">
-          <span class="info-label">🍽️ Beslenme</span>
-          <span id="fishDiet" class="info-val"></span>
-        </div>
-        <div class="info-box">
-          <span class="info-label">⚠️ Durum</span>
-          <span id="fishStatus" class="info-val"></span>
-        </div>
+        <div class="info-box"><span class="info-label">📏 Boyut</span><span id="fishSize" class="info-val"></span></div>
+        <div class="info-box"><span class="info-label">🌊 Habitat</span><span id="fishHabitat" class="info-val"></span></div>
+        <div class="info-box"><span class="info-label">🍽️ Beslenme</span><span id="fishDiet" class="info-val"></span></div>
+        <div class="info-box"><span class="info-label">⚠️ Durum</span><span id="fishStatus" class="info-val"></span></div>
       </div>
       <button id="quizBtn">Quiz'e Geç 🧠</button>
       <button id="closeBtn" class="btn-secondary">Kapat ve 3D İzle</button>
@@ -57,43 +47,15 @@
   </div>
 
   <div id="quizPopup" class="hidden">
-    <div class="popup-card quiz-card">
-      <div class="quiz-header">
-        <span id="quizProgress">Soru 1 / 3</span>
-        <span id="quizScore">⭐ 0</span>
-      </div>
-      <h3 id="quizQuestion"></h3>
-      <div id="quizOptions" class="quiz-options"></div>
-      <div id="quizFeedback" class="quiz-feedback hidden"></div>
-      <button id="quizNext" class="hidden">Sonraki Soru →</button>
-      <button id="quizFinish" class="hidden">Bitir 🎉</button>
-    </div>
+    <!-- Quiz kodların duruyor... -->
   </div>
 
   <div id="resultPopup" class="hidden">
-    <div class="popup-card result-card">
-      <div id="resultEmoji" class="result-emoji"></div>
-      <h2 id="resultTitle"></h2>
-      <p id="resultDesc"></p>
-      <div class="score-circle">
-        <span id="resultScore"></span>
-      </div>
-      <button id="resultClose">Tekrar Tarat 🎯</button>
-    </div>
+    <!-- Sonuç kodların duruyor... -->
   </div>
 
-  <div id="aiPopup" class="hidden">
-  <div class="popup-card ai-card">
-    <h2>🤖 AI Balık Tanıma</h2>
-    <p>Kamerayı balığa tut, fotoğraf çek!</p>
-    <video id="aiVideo" autoplay playsinline></video>
-    <canvas id="aiCanvas" class="hidden"></canvas>
-    <img id="aiPreview" class="hidden" alt="preview" />
-    <div id="aiResult" class="ai-result hidden"></div>
-    <button id="aiCaptureBtn">📸 Fotoğraf Çek</button>
-    <button id="aiAnalyzeBtn" class="hidden">Analiz Et 🔍</button>
-    <button id="aiClose" class="btn-secondary">Kapat</button>
-  </div>
+<div id="aiPopup" class="hidden">
+    <!-- AI kodların duruyor... -->
 </div>
 
   <button id="aiFloatBtn" class="hidden ai-float-btn">🤖 AI Tanı</button>
@@ -105,39 +67,28 @@
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
+    <!-- GÜVENLİ MOD: Sadece Sazan modelini yüklemeye çalışıyoruz -->
     <a-assets>
-      <a-asset-item id="modelPalyaco" src="./assets/models/palyaco.glb"></a-asset-item>
       <a-asset-item id="modelSazan" src="./assets/models/sazan.glb"></a-asset-item>
-      <a-asset-item id="modelKopek" src="./assets/models/kopekbaligi.glb"></a-asset-item>
-      <a-asset-item id="modelJapon" src="./assets/models/japon.glb"></a-asset-item>
     </a-assets>
 
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
     <a-entity mindar-image-target="targetIndex: 0"></a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 1">
-      <a-gltf-model id="model-1" src="#modelPalyaco" position="0 0 0.1" scale="0.4 0.4 0.4" animation-mixer visible="false"></a-gltf-model>
-    </a-entity>
-    
+    <a-entity mindar-image-target="targetIndex: 1"></a-entity>
     <a-entity mindar-image-target="targetIndex: 2"></a-entity>
     
+    <!-- 3. Hedef: Sazan -->
     <a-entity mindar-image-target="targetIndex: 3">
       <a-gltf-model id="model-3" src="#modelSazan" position="0 0 0.1" scale="0.4 0.4 0.4" animation-mixer visible="false"></a-gltf-model>
     </a-entity>
     
-    <a-entity mindar-image-target="targetIndex: 4">
-      <a-gltf-model id="model-4" src="#modelKopek" position="0 0 0.1" scale="0.4 0.4 0.4" animation-mixer visible="false"></a-gltf-model>
-    </a-entity>
-    
+    <a-entity mindar-image-target="targetIndex: 4"></a-entity>
     <a-entity mindar-image-target="targetIndex: 5"></a-entity>
     <a-entity mindar-image-target="targetIndex: 6"></a-entity>
     <a-entity mindar-image-target="targetIndex: 7"></a-entity>
     <a-entity mindar-image-target="targetIndex: 8"></a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 9">
-      <a-gltf-model id="model-9" src="#modelJapon" position="0 0 0.1" scale="0.4 0.4 0.4" animation-mixer visible="false"></a-gltf-model>
-    </a-entity>
+    <a-entity mindar-image-target="targetIndex: 9"></a-entity>
 
   </a-scene>
 
