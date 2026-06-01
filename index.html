@@ -9,15 +9,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
 
+  <!-- AFRAME -->
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <!-- MINDAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+  <!-- START SCREEN -->
   <div id="startScreen">
     <div class="start-card">
       <div class="logo">🐟</div>
@@ -27,6 +29,7 @@
     </div>
   </div>
 
+  <!-- BALIK BİLGİ POPUP -->
   <div id="fishPopup" class="hidden">
     <div class="popup-card">
       <img id="fishImage" src="" alt="" />
@@ -51,10 +54,11 @@
         </div>
       </div>
       <button id="quizBtn">Quiz'e Geç 🧠</button>
-      <button id="closeBtn" class="btn-secondary">Kapat ve 3D İzle</button>
+      <button id="closeBtn" class="btn-secondary">Kapat</button>
     </div>
   </div>
 
+  <!-- QUIZ POPUP -->
   <div id="quizPopup" class="hidden">
     <div class="popup-card quiz-card">
       <div class="quiz-header">
@@ -69,6 +73,7 @@
     </div>
   </div>
 
+  <!-- SONUÇ POPUP -->
   <div id="resultPopup" class="hidden">
     <div class="popup-card result-card">
       <div id="resultEmoji" class="result-emoji"></div>
@@ -81,22 +86,26 @@
     </div>
   </div>
 
-  <div id="aiPopup" class="hidden">
-    <div class="popup-card ai-card">
-      <h2>🤖 AI Balık Tanıma</h2>
-      <p>Kamerayı balığa tut, fotoğraf çek!</p>
-      <video id="aiVideo" autoplay playsinline></video>
-      <canvas id="aiCanvas" class="hidden"></canvas>
-      <img id="aiPreview" class="hidden" alt="preview" />
-      <div id="aiResult" class="ai-result hidden"></div>
-      <button id="aiCaptureBtn">📸 Fotoğraf Çek</button>
-      <button id="aiAnalyzeBtn" class="hidden">Analiz Et 🔍</button>
-      <button id="aiClose" class="btn-secondary">Kapat</button>
-    </div>
+  <!-- AI TANIMA POPUP -->
+<!-- AI TANIMA POPUP -->
+<div id="aiPopup" class="hidden">
+  <div class="popup-card ai-card">
+    <h2>🤖 AI Balık Tanıma</h2>
+    <p>Kamerayı balığa tut, fotoğraf çek!</p>
+    <video id="aiVideo" autoplay playsinline></video>
+    <canvas id="aiCanvas" class="hidden"></canvas>
+    <img id="aiPreview" class="hidden" alt="preview" />
+    <div id="aiResult" class="ai-result hidden"></div>
+    <button id="aiCaptureBtn">📸 Fotoğraf Çek</button>
+    <button id="aiAnalyzeBtn" class="hidden">Analiz Et 🔍</button>
+    <button id="aiClose" class="btn-secondary">Kapat</button>
   </div>
+</div>
 
+  <!-- AI BUTONU (sabit) -->
   <button id="aiFloatBtn" class="hidden ai-float-btn">🤖 AI Tanı</button>
 
+  <!-- AR SCENE -->
   <a-scene
     mindar-image="imageTargetSrc: ./assets/targets/targets.mind; uiScanning: yes; uiLoading: yes;"
     color-space="sRGB"
@@ -104,54 +113,18 @@
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-    <a-assets>
-      <a-asset-item id="modelPalyaco" src="./assets/models/palyaço.glb"></a-asset-item>
-      <a-asset-item id="modelSazan" src="./assets/models/sazan.glb"></a-asset-item>
-      <a-asset-item id="modelKopek" src="./assets/models/kopekbaligi.glb"></a-asset-item>
-      <a-asset-item id="modelJapon" src="./assets/models/japon.glb"></a-asset-item>
-    </a-assets>
-
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-    <a-entity mindar-image-target="targetIndex: 0">
-      <a-gltf-model id="model-0" position="0 0 0.1" scale="0.4 0.4 0.4" visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 1">
-      <a-gltf-model id="model-1" src="#modelPalyaco" position="0 0 0.1" scale="0.4 0.4 0.4" animation-mixer visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 2">
-      <a-gltf-model id="model-2" position="0 0 0.1" scale="0.4 0.4 0.4" visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 3">
-      <a-gltf-model id="model-3" src="#modelSazan" position="0 0 0.1" scale="0.4 0.4 0.4" animation-mixer visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 4">
-      <a-gltf-model id="model-4" src="#modelKopek" position="0 0 0.1" scale="0.4 0.4 0.4" animation-mixer visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 5">
-      <a-gltf-model id="model-5" position="0 0 0.1" scale="0.4 0.4 0.4" visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 6">
-      <a-gltf-model id="model-6" position="0 0 0.1" scale="0.4 0.4 0.4" visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 7">
-      <a-gltf-model id="model-7" position="0 0 0.1" scale="0.4 0.4 0.4" visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 8">
-      <a-gltf-model id="model-8" position="0 0 0.1" scale="0.4 0.4 0.4" visible="false"></a-gltf-model>
-    </a-entity>
-    
-    <a-entity mindar-image-target="targetIndex: 9">
-      <a-gltf-model id="model-9" src="#modelJapon" position="0 0 0.1" scale="0.4 0.4 0.4" animation-mixer visible="false"></a-gltf-model>
-    </a-entity>
+    <a-entity mindar-image-target="targetIndex: 0"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 1"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 2"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 3"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 4"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 5"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 6"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 7"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 8"></a-entity>
+    <a-entity mindar-image-target="targetIndex: 9"></a-entity>
 
   </a-scene>
 

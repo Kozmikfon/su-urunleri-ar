@@ -50,9 +50,21 @@ const fishData = {
     status: "Yaygın",
     image: "./assets/images/0-levrek.jpg",
     questions: [
-      { q: "Levrek hangi denizde yaşar?", options: ["Karadeniz", "Ege Denizi", "Kızıl Deniz", "Baltık Denizi"], correct: 1 },
-      { q: "Levreğin beslenme türü nedir?", options: ["Ot yiyen", "Etçil", "Her şeyi yer", "Plankton filtreler"], correct: 1 },
-      { q: "Levreğin bilimsel adı nedir?", options: ["Salmo salar", "Amphiprion ocellaris", "Dicentrarchus labrax", "Thunnus thynnus"], correct: 2 }
+      {
+        q: "Levrek hangi denizde yaşar?",
+        options: ["Karadeniz", "Ege Denizi", "Kızıl Deniz", "Baltık Denizi"],
+        correct: 1
+      },
+      {
+        q: "Levreğin beslenme türü nedir?",
+        options: ["Ot yiyen", "Etçil", "Her şeyi yer", "Plankton filtreler"],
+        correct: 1
+      },
+      {
+        q: "Levreğin bilimsel adı nedir?",
+        options: ["Salmo salar", "Amphiprion ocellaris", "Dicentrarchus labrax", "Thunnus thynnus"],
+        correct: 2
+      }
     ]
   },
   1: {
@@ -64,9 +76,21 @@ const fishData = {
     status: "Yaygın",
     image: "./assets/images/1-palyaco.jpg",
     questions: [
-      { q: "Palyaço balığı hangi canlıyla birlikte yaşar?", options: ["Ahtapot", "Denizanası", "Deniz anemon'u", "Mercan"], correct: 2 },
-      { q: "Palyaço balığının ortalama boyu nedir?", options: ["30 cm", "8–15 cm", "50 cm", "1 metre"], correct: 1 },
-      { q: "Palyaço balığı hangi okyanus/denizlerde bulunur?", options: ["Atlantik", "Arktik", "Pasifik & Hint Okyanusu", "Akdeniz"], correct: 2 }
+      {
+        q: "Palyaço balığı hangi canlıyla birlikte yaşar?",
+        options: ["Ahtapot", "Denizanası", "Deniz anemon'u", "Mercan"],
+        correct: 2
+      },
+      {
+        q: "Palyaço balığının ortalama boyu nedir?",
+        options: ["30 cm", "8–15 cm", "50 cm", "1 metre"],
+        correct: 1
+      },
+      {
+        q: "Palyaço balığı hangi okyanus/denizlerde bulunur?",
+        options: ["Atlantik", "Arktik", "Pasifik & Hint Okyanusu", "Akdeniz"],
+        correct: 2
+      }
     ]
   },
   2: {
@@ -78,12 +102,24 @@ const fishData = {
     status: "Kültür balıkçılığı",
     image: "./assets/images/2-somon.jpg",
     questions: [
-      { q: "Somon balığı nerede doğar?", options: ["Okyanusta", "Tatlı suda", "Lagünde", "Deniz tabanında"], correct: 1 },
-      { q: "Somon hangi besin maddesiyle ünlüdür?", options: ["Kalsiyum", "Demir", "Omega-3 yağ asidi", "Vitamin C"], correct: 2 },
-      { q: "Somonun bilimsel adı nedir?", options: ["Salmo salar", "Dicentrarchus labrax", "Trachurus trachurus", "Sparus aurata"], correct: 0 }
+      {
+        q: "Somon balığı nerede doğar?",
+        options: ["Okyanusta", "Tatlı suda", "Lagünde", "Deniz tabanında"],
+        correct: 1
+      },
+      {
+        q: "Somon hangi besin maddesiyle ünlüdür?",
+        options: ["Kalsiyum", "Demir", "Omega-3 yağ asidi", "Vitamin C"],
+        correct: 2
+      },
+      {
+        q: "Somonun bilimsel adı nedir?",
+        options: ["Salmo salar", "Dicentrarchus labrax", "Trachurus trachurus", "Sparus aurata"],
+        correct: 0
+      }
     ]
   },
-  3: {
+    3: {
     name: "Sazan Balığı",
     desc: "Sazan balığı tatlı sularda yaşayan dayanıklı ve yaygın bir balık türüdür.",
     habitat: "Göl ve Nehirler",
@@ -91,12 +127,26 @@ const fishData = {
     diet: "Omnivor",
     status: "Yaygın",
     image: "./assets/images/3-sazan.jpg",
+
     questions: [
-      { q: "Sazan balığı hangi sularda yaşar?", options: ["Tatlı su", "Okyanus", "Tuz gölü", "Mercan resifi"], correct: 0 },
-      { q: "Sazan nasıl beslenir?", options: ["Etçil", "Otçul", "Omnivor", "Sadece plankton"], correct: 2 },
-      { q: "Sazan balığı genelde nerede bulunur?", options: ["Çölde", "Nehir ve göllerde", "Buzullarda", "Mağarada"], correct: 1 }
+      {
+        q: "Sazan balığı hangi sularda yaşar?",
+        options: ["Tatlı su", "Okyanus", "Tuz gölü", "Mercan resifi"],
+        correct: 0
+      },
+      {
+        q: "Sazan nasıl beslenir?",
+        options: ["Etçil", "Otçul", "Omnivor", "Sadece plankton"],
+        correct: 2
+      },
+      {
+        q: "Sazan balığı genelde nerede bulunur?",
+        options: ["Çölde", "Nehir ve göllerde", "Buzullarda", "Mağarada"],
+        correct: 1
+      }
     ]
   },
+
   4: {
     name: "Köpek Balığı",
     desc: "Köpek balıkları okyanusların en güçlü avcılarından biridir.",
@@ -105,12 +155,26 @@ const fishData = {
     diet: "Etçil",
     status: "Bazı türler tehlikede",
     image: "./assets/images/4-kopekbaligi.jpg",
+
     questions: [
-      { q: "Köpek balığı nasıl beslenir?", options: ["Otçul", "Etçil", "Plankton", "Alg"], correct: 1 },
-      { q: "Köpek balıkları nerede yaşar?", options: ["Çöller", "Ormanlar", "Okyanuslar", "Nehirler"], correct: 2 },
-      { q: "Köpek balığı hangi özelliğiyle bilinir?", options: ["Uçması", "Güçlü avcı olması", "Karada yaşaması", "Işık saçması"], correct: 1 }
+      {
+        q: "Köpek balığı nasıl beslenir?",
+        options: ["Otçul", "Etçil", "Plankton", "Alg"],
+        correct: 1
+      },
+      {
+        q: "Köpek balıkları nerede yaşar?",
+        options: ["Çöller", "Ormanlar", "Okyanuslar", "Nehirler"],
+        correct: 2
+      },
+      {
+        q: "Köpek balığı hangi özelliğiyle bilinir?",
+        options: ["Uçması", "Güçlü avcı olması", "Karada yaşaması", "Işık saçması"],
+        correct: 1
+      }
     ]
   },
+
   5: {
     name: "Ton Balığı",
     desc: "Ton balığı hızlı yüzmesiyle bilinen büyük bir okyanus balığıdır.",
@@ -119,12 +183,26 @@ const fishData = {
     diet: "Etçil",
     status: "Ticari avcılık",
     image: "./assets/images/5-ton.jpg",
+
     questions: [
-      { q: "Ton balığı nasıl bir balıktır?", options: ["Yavaş", "Uçamayan", "Hızlı yüzen", "Tatlı su"], correct: 2 },
-      { q: "Ton balığı nerede yaşar?", options: ["Okyanus", "Çöl", "Nehir", "Bataklık"], correct: 0 },
-      { q: "Ton balığı neyle beslenir?", options: ["Etçil", "Otçul", "Meyve", "Alg"], correct: 0 }
+      {
+        q: "Ton balığı nasıl bir balıktır?",
+        options: ["Yavaş", "Uçamayan", "Hızlı yüzen", "Tatlı su"],
+        correct: 2
+      },
+      {
+        q: "Ton balığı nerede yaşar?",
+        options: ["Okyanus", "Çöl", "Nehir", "Bataklık"],
+        correct: 0
+      },
+      {
+        q: "Ton balığı neyle beslenir?",
+        options: ["Etçil", "Otçul", "Meyve", "Alg"],
+        correct: 0
+      }
     ]
   },
+
   6: {
     name: "Yunus Balığı",
     desc: "Yunus balığı hızlı hareket eden tropikal bir deniz canlısıdır.",
@@ -133,12 +211,26 @@ const fishData = {
     diet: "Etçil",
     status: "Yaygın",
     image: "./assets/images/6-yunus.jpg",
+
     questions: [
-      { q: "Yunus balığı hangi sularda yaşar?", options: ["Tatlı su", "Tropikal denizler", "Buzullar", "Mağaralar"], correct: 1 },
-      { q: "Yunus balığı nasıl beslenir?", options: ["Otçul", "Etçil", "Alg", "Plankton"], correct: 1 },
-      { q: "Yunus balığı hangi özelliğiyle bilinir?", options: ["Hızlı yüzmesi", "Karada yaşaması", "Uçması", "Işık saçması"], correct: 0 }
+      {
+        q: "Yunus balığı hangi sularda yaşar?",
+        options: ["Tatlı su", "Tropikal denizler", "Buzullar", "Mağaralar"],
+        correct: 1
+      },
+      {
+        q: "Yunus balığı nasıl beslenir?",
+        options: ["Otçul", "Etçil", "Alg", "Plankton"],
+        correct: 1
+      },
+      {
+        q: "Yunus balığı hangi özelliğiyle bilinir?",
+        options: ["Hızlı yüzmesi", "Karada yaşaması", "Uçması", "Işık saçması"],
+        correct: 0
+      }
     ]
   },
+
   7: {
     name: "Hamsi",
     desc: "Hamsi Karadeniz'de yaygın bulunan küçük bir balık türüdür.",
@@ -147,12 +239,26 @@ const fishData = {
     diet: "Plankton",
     status: "Yaygın",
     image: "./assets/images/7-hamsi.jpg",
+
     questions: [
-      { q: "Hamsi en çok hangi bölgede bulunur?", options: ["Karadeniz", "Çöl", "Pasifik", "Atlantik"], correct: 0 },
-      { q: "Hamsi neyle beslenir?", options: ["Et", "Plankton", "Alg", "Meyve"], correct: 1 },
-      { q: "Hamsi nasıl bir balıktır?", options: ["Dev", "Küçük", "Uçan", "Tatlı su"], correct: 1 }
+      {
+        q: "Hamsi en çok hangi bölgede bulunur?",
+        options: ["Karadeniz", "Çöl", "Pasifik", "Atlantik"],
+        correct: 0
+      },
+      {
+        q: "Hamsi neyle beslenir?",
+        options: ["Et", "Plankton", "Alg", "Meyve"],
+        correct: 1
+      },
+      {
+        q: "Hamsi nasıl bir balıktır?",
+        options: ["Dev", "Küçük", "Uçan", "Tatlı su"],
+        correct: 1
+      }
     ]
   },
+
   8: {
     name: "Orkinos",
     desc: "Orkinos büyük ve güçlü bir açık deniz balığıdır.",
@@ -161,12 +267,26 @@ const fishData = {
     diet: "Etçil",
     status: "Av baskısı altında",
     image: "./assets/images/8-orkinos.jpg",
+
     questions: [
-      { q: "Orkinos nasıl beslenir?", options: ["Otçul", "Etçil", "Alg", "Plankton"], correct: 1 },
-      { q: "Orkinos nerede yaşar?", options: ["Açık deniz", "Çöl", "Nehir", "Orman"], correct: 0 },
-      { q: "Orkinos nasıl bir balıktır?", options: ["Küçük", "Güçlü", "Uçan", "Karasal"], correct: 1 }
+      {
+        q: "Orkinos nasıl beslenir?",
+        options: ["Otçul", "Etçil", "Alg", "Plankton"],
+        correct: 1
+      },
+      {
+        q: "Orkinos nerede yaşar?",
+        options: ["Açık deniz", "Çöl", "Nehir", "Orman"],
+        correct: 0
+      },
+      {
+        q: "Orkinos nasıl bir balıktır?",
+        options: ["Küçük", "Güçlü", "Uçan", "Karasal"],
+        correct: 1
+      }
     ]
   },
+
   9: {
     name: "Japon Balığı",
     desc: "Japon balığı akvaryumlarda en çok beslenen süs balıklarından biridir.",
@@ -175,10 +295,23 @@ const fishData = {
     diet: "Omnivor",
     status: "Evcil",
     image: "./assets/images/9-japon.jpg",
+
     questions: [
-      { q: "Japon balığı genellikle nerede yaşar?", options: ["Akvaryum", "Çöl", "Okyanus", "Buzul"], correct: 0 },
-      { q: "Japon balığı nasıl beslenir?", options: ["Etçil", "Omnivor", "Sadece et", "Sadece alg"], correct: 1 },
-      { q: "Japon balığı hangi amaçla beslenir?", options: ["Yarış", "Süs", "Avcılık", "Taşıma"], correct: 1 }
+      {
+        q: "Japon balığı genellikle nerede yaşar?",
+        options: ["Akvaryum", "Çöl", "Okyanus", "Buzul"],
+        correct: 0
+      },
+      {
+        q: "Japon balığı nasıl beslenir?",
+        options: ["Etçil", "Omnivor", "Sadece et", "Sadece alg"],
+        correct: 1
+      },
+      {
+        q: "Japon balığı hangi amaçla beslenir?",
+        options: ["Yarış", "Süs", "Avcılık", "Taşıma"],
+        correct: 1
+      }
     ]
   }
 };
@@ -192,18 +325,7 @@ startBtn.addEventListener("click", () => {
 /* ── BALIK POPUP KAPAT ── */
 closeBtn.addEventListener("click", () => {
   popup.classList.add("hidden");
-  
-  // --- YENİ EKLENEN 3D KODU BAŞLANGICI ---
-  // Popup kapanınca o anki balığın 3D modelini görünür yap
-  if (currentTarget !== null) {
-    const activeModel = document.getElementById(`model-${currentTarget}`);
-    if (activeModel) {
-      activeModel.setAttribute("visible", "true");
-    }
-  }
-  // --- YENİ EKLENEN 3D KODU BİTİŞİ ---
-  
-  // Not: currentTarget = null; kısmı 3D'nin hafızada kalması için burdan kaldırılıp targetLost'a taşındı.
+  currentTarget = null;
 });
 
 /* ── QUİZ BAŞLAT ── */
@@ -311,16 +433,7 @@ window.addEventListener("load", () => {
   const targets = document.querySelectorAll("[mindar-image-target]");
 
   targets.forEach((target, index) => {
-    
-    // HEDEF BULUNDUĞUNDA
     target.addEventListener("targetFound", () => {
-      
-      // --- YENİ EKLENEN 3D KODU BAŞLANGICI ---
-      // Popup açılacağı için 3D modeli şimdilik gizli tut
-      const model = document.getElementById(`model-${index}`);
-      if (model) model.setAttribute("visible", "false");
-      // --- YENİ EKLENEN 3D KODU BİTİŞİ ---
-
       if (currentTarget === index) return;
       currentTarget = index;
 
@@ -338,21 +451,6 @@ window.addEventListener("load", () => {
 
       popup.classList.remove("hidden");
     });
-
-    // --- YENİ EKLENEN 3D KODU BAŞLANGICI ---
-    // HEDEF KAYBOLDUĞUNDA (Resim kadrajdan çıkınca)
-    target.addEventListener("targetLost", () => {
-      // Modeli gizle
-      const model = document.getElementById(`model-${index}`);
-      if (model) model.setAttribute("visible", "false");
-      
-      // Tekrar okutulabilmesi için hafızayı temizle
-      if (currentTarget === index) {
-        currentTarget = null;
-      }
-    });
-    // --- YENİ EKLENEN 3D KODU BİTİŞİ ---
-
   });
 });
 
@@ -363,10 +461,12 @@ const aiCanvas  = document.getElementById("aiCanvas");
 const aiCapture = document.getElementById("aiCaptureBtn");
 
 aiFloatBtn.addEventListener("click", async () => {
+  // AR sahnesini duraklat
   const sceneEl = document.querySelector("a-scene");
   if (sceneEl && sceneEl.systems["mindar-image-system"]) {
     sceneEl.systems["mindar-image-system"].pause();
   }
+// AR video elementini gizle
   const arVideo = document.querySelector("video.videoTexture");
   if (arVideo) arVideo.style.display = "none";
   aiPopup.classList.remove("hidden");
@@ -392,14 +492,15 @@ aiClose.addEventListener("click", () => {
   aiResult.classList.add("hidden");
   aiVideo.srcObject = null;
 
+  // AR sahnesini tekrar başlat
   const sceneEl = document.querySelector("a-scene");
   if (sceneEl && sceneEl.systems["mindar-image-system"]) {
     sceneEl.systems["mindar-image-system"].unpause();
   }
+  // AR video elementini tekrar göster
   const arVideo = document.querySelector("video.videoTexture");
   if (arVideo) arVideo.style.display = "";
 });
-
 aiCapture.addEventListener("click", () => {
   aiCanvas.width  = aiVideo.videoWidth;
   aiCanvas.height = aiVideo.videoHeight;
